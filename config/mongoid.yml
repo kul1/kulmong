@@ -101,9 +101,9 @@ test:
         retry_interval: 0
 production:
   sessions:
-    default:
-      host: <%= ENV['MONGOID_HOST'] %>
-      port: <%= ENV['MONGOID_PORT'] %>
-      username: <%= ENV['MONGOID_USERNAME'] %>
-      password: <%= ENV['MONGOID_PASSWORD'] %>
-      database: <%= ENV['MONGOID_DATABASE'] %>
+    defaults:
+      uri: <%= ENV['MONGOID_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true
+  
