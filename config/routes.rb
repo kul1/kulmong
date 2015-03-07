@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :agendas
+
   resources :projects
-  
-  root 'welcome#index'
+  root :to => 'projects#index'
+  #root 'welcome#index'
 end
